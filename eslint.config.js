@@ -1,0 +1,32 @@
+import perfectionist from "eslint-plugin-perfectionist"
+import { defineConfig } from "eslint/config"
+import tseslint from "typescript-eslint"
+import eslint from "@eslint/js"
+
+export default defineConfig(
+  eslint.configs.recommended,
+  tseslint.configs.strictTypeChecked,
+  perfectionist.configs["recommended-line-length"], // https://perfectionist.dev/configs/recommended-line-length
+  {
+    rules: {
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
+      "no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
+      "perfectionist/sort-modules": "off",
+      "perfectionist/sort-objects": "off",
+      "perfectionist/sort-interfaces": "off",
+      "perfectionist/sort-object-types": "off",
+    },
+
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
+    },
+  }
+)
