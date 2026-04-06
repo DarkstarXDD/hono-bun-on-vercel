@@ -5,6 +5,7 @@
   "scripts": {
     "prepare": "husky",
     "dev": "bun --watch ./src/app.ts",
+    "build": "bun build ./src/app.ts --outdir ./dist",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
     "format:check": "prettier --check .",
