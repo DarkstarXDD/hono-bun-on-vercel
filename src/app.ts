@@ -1,7 +1,7 @@
 import { Hono } from "hono"
 
-import postsRouter from "./routes/posts.route.ts"
-import userRouter from "./routes/users.route.ts"
+import postsRouter from "./routes/posts.route.js"
+import userRouter from "./routes/users.route.js"
 
 const app = new Hono()
 
